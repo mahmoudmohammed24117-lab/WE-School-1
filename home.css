@@ -200,3 +200,59 @@ a:hover, .explore-btn:hover {
     text-align: center;
     font-size: 0.9rem;
 }
+/* @media screen and (min-width:768px) and (max-width:1023px) {
+    #navbar ul{
+        display: none;
+    }
+    #labs{
+        display: grid;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: auto auto;
+    }
+    
+}
+@media screen and (max-width:767px) {
+     #navbar ul{
+        display: none;
+    }
+    #labs{
+        display: grid;
+        grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        grid-template-columns: auto;
+    }    
+    
+} */
+ /* Responsive Labs Section */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet */
+    .navbar ul li a {
+        font-size: 0; /* يخفي النصوص */
+    }
+    .navbar ul li a::after {
+        content: attr(title); /* يعرض النصوص كأيقونات أو tooltip */
+        font-size: 1rem; /* تقدر تتحكم في الحجم */
+        color: #ffd700;
+    }
+
+    .labs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards في الصف */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Mobile */
+    .navbar ul {
+        display: none; /* يخفي الnavbar */
+    }
+
+    .labs-grid {
+        grid-template-columns: 1fr; /* card واحدة في الصف */
+    }
+}
+
+/* Desktop (Default) */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 أو أكثر حسب حجم الشاشة */
+    gap: 30px;
+}
